@@ -1,6 +1,6 @@
-# Text Classification using Different Techniques
+# Sentiment Analysis using Different Techniques
 
-Text Classification is one of the most common / basic NLP tasks. I have performed this task with a custom dataset using two different methods, <ol>
+Sentiment Analysis is one of the most common / basic NLP tasks. I have performed this task with a custom dataset using two different methods, <ol>
 <li>Using BiDirectional LSTMs as pipeline for text classification with GLOVE embeddings</li>
 <li>Using <a href = "https://arxiv.org/abs/1607.01759">fastText</a> Classifier as pipeline with GLOVE embeddings </li> 
 </ol>
