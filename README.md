@@ -54,10 +54,11 @@ test_examples = [data.Example.fromlist([test_sentences[i], test_labels[i]], fiel
  
 <li>CSV / TSV / JSON file, if this is the case check this <a href = "https://github.com/bentrevett/pytorch-sentimentanalysis/blob/master/A%20-%20Using%20TorchText%20with%20Your%20Own%20Datasets.ipynb" > link </a> out</li></ol>
 
-<p>Post this, to build the vocab, we would be using Glove embeddings, this can be done using
+#### Using GLOVE Embeddings
+<p>Post this, to build the vocab, we would be using Glove embeddings (or any other kind of embedding like FastText or CharNGram), this can be done using
 
 ```python
-MAX_VOCAB_SIZE = 25_000
+MAX_VOCAB_SIZE = 25000
 
 TEXT.build_vocab(train_data, 
                  max_size = MAX_VOCAB_SIZE, 
@@ -87,8 +88,17 @@ train_iterator, valid_iterator, test_iterator = data.BucketIterator.splits(
 ```
 </p>
 
-
 ### BiDirectional LSTM :
+<p> 
+ The concept behind a bidirectional RNN is simple. As well as having an RNN processing the words in the sentence from the first to the last (a forward RNN), we have a second RNN processing the words in the sentence from the last to the first (a backward RNN). At time step $t$, the forward RNN is processing word $x_t$, and the backward RNN is processing word $x_{T-t+1}$.
+In PyTorch, the hidden state (and cell state) tensors returned by the forward and backward RNNs are stacked on top of each other in a single tensor.
+We make our sentiment prediction using a concatenation of the last hidden state from the forward RNN (obtained from final word of the sentence), $h_T^\rightarrow$, and the last hidden state from the backward RNN (obtained from the first word of the sentence), $h_T^\leftarrow$, i.e. $\hat{y}=f(h_T^\rightarrow, h_T^\leftarrow)$
+The image below shows a bi-directional RNN, with the forward RNN in orange, the backward RNN in green and the linear layer in silver.
+<p align = "center">
+   <img src="https://github.com/nikhilshenoy/Spine_Segmentation/blob/master/images/AP_LAT.png" 
+       width="300" height = "300"/>
+</p>
+</p>
 
 ### FastText Classifier :
 
