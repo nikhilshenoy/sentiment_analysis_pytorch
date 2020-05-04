@@ -28,28 +28,28 @@ I will be using torchtext.Data to do all the preprocessing and to create a datal
 Usually with any kind of dataset, we generally arrive at one of the following points,
 <ul>
  <li>Lists of texts and labels</li></ul>
- ```python
-# The documentation is self explanatory : https://pytorch.org/text/data.html#
-TEXT = data.Field(sequential=True, 
-                       tokenize='spacy', 
-                       include_lengths=True, 
-                       use_vocab=True)
-LABEL = data.Field(sequential=False, 
-                         use_vocab=False, 
-                         pad_token=None, 
-                         unk_token=None)
+ ```
+  # The documentation is self explanatory : https://pytorch.org/text/data.html#
+  TEXT = data.Field(sequential=True, 
+                         tokenize='spacy', 
+                         include_lengths=True, 
+                         use_vocab=True)
+  LABEL = data.Field(sequential=False, 
+                           use_vocab=False, 
+                           pad_token=None, 
+                           unk_token=None)
 
-fields = fields = [
-    ('text', TEXT), 
-    ('label', LABEL)
-]
+  fields = fields = [
+      ('text', TEXT), 
+      ('label', LABEL)
+  ]
 
-train_examples = [data.Example.fromlist([train_sentences[i], train_labels[i]], fields) 
-                  for i in range(len(train_sentences))]
-val_examples = [data.Example.fromlist([val_sentences[i], val_labels[i]], fields) 
-                  for i in range(len(val_sentences))]
-test_examples = [data.Example.fromlist([test_sentences[i], test_labels[i]], fields) 
-                for i in range(len(test_sentences))]
+  train_examples = [data.Example.fromlist([train_sentences[i], train_labels[i]], fields) 
+                    for i in range(len(train_sentences))]
+  val_examples = [data.Example.fromlist([val_sentences[i], val_labels[i]], fields) 
+                    for i in range(len(val_sentences))]
+  test_examples = [data.Example.fromlist([test_sentences[i], test_labels[i]], fields) 
+                  for i in range(len(test_sentences))]
              
 ```
  
