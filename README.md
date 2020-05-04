@@ -26,10 +26,10 @@ I will be using torchtext.Data to do all the preprocessing and to create a datal
 </ol>
 
 Usually with any kind of dataset, we generally arrive at one of the following points,
-<ol>
- <li>Lists of texts and labels</li>
+<ul>
+ <li>Lists of texts and labels</li></ul>
  ```python
- # define the columns that we want to process and how to process
+# The documentation is self explanatory : https://pytorch.org/text/data.html#
 TEXT = data.Field(sequential=True, 
                        tokenize='spacy', 
                        include_lengths=True, 
@@ -38,9 +38,23 @@ LABEL = data.Field(sequential=False,
                          use_vocab=False, 
                          pad_token=None, 
                          unk_token=None)
- ```
+
+fields = fields = [
+    ('text', TEXT), 
+    ('label', LABEL)
+]
+
+train_examples = [data.Example.fromlist([train_sentences[i], train_labels[i]], fields) 
+                  for i in range(len(train_sentences))]
+val_examples = [data.Example.fromlist([val_sentences[i], val_labels[i]], fields) 
+                  for i in range(len(val_sentences))]
+test_examples = [data.Example.fromlist([test_sentences[i], test_labels[i]], fields) 
+                for i in range(len(test_sentences))]
+             
+```
+ <ul>
  <li>CSV / TSV / JSON file, if this is the case check this <a href = "https://github.com/bentrevett/pytorch-sentiment-analysis/blob/master/A%20-%20Using%20TorchText%20with%20Your%20Own%20Datasets.ipynb" > link </a> out</li>
-</ol>
+</ul>
 
 
 
