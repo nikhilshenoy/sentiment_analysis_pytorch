@@ -1,4 +1,4 @@
-# Sentiment Analysis using Different Technique
+# Sentiment Analysis using Different Techniques
 
 Sentiment Analysis is one of the most common NLP tasks. 
 
