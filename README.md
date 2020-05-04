@@ -95,13 +95,18 @@ In PyTorch, the hidden state (and cell state) tensors returned by the forward an
 We make our sentiment prediction using a concatenation of the last hidden state from the forward RNN (obtained from final word of the sentence), $h_T^\rightarrow$, and the last hidden state from the backward RNN (obtained from the first word of the sentence), $h_T^\leftarrow$, i.e. $\hat{y}=f(h_T^\rightarrow, h_T^\leftarrow)$
 The image below shows a bi-directional RNN, with the forward RNN in orange, the backward RNN in green and the linear layer in silver.
 <p align = "center">
-   <img src="https://github.com/nikhilshenoy/Spine_Segmentation/blob/master/images/AP_LAT.png" 
+   <img src="https://github.com/nikhilshenoy/sentiment_analysis_pytorch/blob/master/images/BiLSTM.png" 
        width="300" height = "300"/>
 </p>
 </p>
 
 ### FastText Classifier :
+Compared to LSTMs, this model has fewer parameters. This model finds out the average embedding tensor for each sentence. For eg. if there are 50 words in a sentence, each of them 100 sized tensors (from Glove embeddings), we will find out an average embedding using the 50 words. Therefore, for a sentence, we would have 1 tensor of 100 size which would be passed through an FC Layer. The picture below illustrates the above said idea,
 
+<p align = "center">
+   <img src="https://github.com/nikhilshenoy/sentiment_analysis_pytorch/blob/master/images/FastText%200.png" 
+       width="300" height = "300"/>
+</p>
 
 ### References :
 
