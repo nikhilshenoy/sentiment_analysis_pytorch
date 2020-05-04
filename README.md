@@ -52,11 +52,8 @@ test_examples = [data.Example.fromlist([test_sentences[i], test_labels[i]], fiel
                 for i in range(len(test_sentences))]
              
 ```
- <ul>
- <li>CSV / TSV / JSON file, if this is the case check this <a href = "https://github.com/bentrevett/pytorch-sentiment-analysis/blob/master/A%20-%20Using%20TorchText%20with%20Your%20Own%20Datasets.ipynb" > link </a> out</li>
-</ul>
-
-
+ 
+<ul><li>CSV / TSV / JSON file, if this is the case check this <a href = "https://github.com/bentrevett/pytorch-sentimentanalysis/blob/master/A%20-%20Using%20TorchText%20with%20Your%20Own%20Datasets.ipynb" > link </a> out</li></ul>
 
 I have 
 
