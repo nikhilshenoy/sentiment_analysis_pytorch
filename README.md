@@ -3,7 +3,7 @@
 Sentiment Analysis is one of the most common NLP tasks. 
 
 #### Dataset Details :
-<p>Instead of using datasets from <a href = "https://pytorch.org/text/datasets.html">torchtext</a> that can be directly used to load as a torch dataset and perform operations. Therefore, I have used a kaggle dataset, <a href="https://www.kaggle.com/bittlingmayer/amazonreviews">Amazon Reviews</a>. </p>
+<p>Instead of using datasets from <a href = "https://pytorch.org/text/datasets.html">torchtext</a> that can be directly used to load as a torch dataset and perform operations. Therefore, I just took a fairly popular kaggle dataset, <a href="https://www.kaggle.com/bittlingmayer/amazonreviews">Amazon Reviews</a>. as my dataset for this task.</p>
 
 Details of Amazon Reviews Dataset : <br>
 <ul><li>Training reivews: 3600000 </li>
