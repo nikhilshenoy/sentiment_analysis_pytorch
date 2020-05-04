@@ -54,6 +54,38 @@ test_examples = [data.Example.fromlist([test_sentences[i], test_labels[i]], fiel
  
 <li>CSV / TSV / JSON file, if this is the case check this <a href = "https://github.com/bentrevett/pytorch-sentimentanalysis/blob/master/A%20-%20Using%20TorchText%20with%20Your%20Own%20Datasets.ipynb" > link </a> out</li></ol>
 
+<p>Post this, to build the vocab, we would be using Glove embeddings, this can be done using
+
+```python
+MAX_VOCAB_SIZE = 25_000
+
+TEXT.build_vocab(train_data, 
+                 max_size = MAX_VOCAB_SIZE, 
+                 vectors = "glove.6B.100d", 
+                 unk_init = torch.Tensor.normal_)
+
+LABEL.build_vocab(train_data)
+```
+
+</p>
+
+<p> <B> Note : </B> It is possible that you come across the error,
+
+```python
+TypeError: ‘<’ not supported between instances of ‘Example’ and ‘Example’ when using custom NLP dataset
+```
+
+to solve this issue while creating the iterators, define the sort_key function
+
+```python
+train_iterator, valid_iterator, test_iterator = data.BucketIterator.splits(
+    (train_data, val_data, test_data), 
+    batch_size = BATCH_SIZE,
+    sort_within_batch = True,
+    sort_key = lambda x : len(x.text),
+    device = device)
+```
+</p>
 
 
 ### BiDirectional LSTM :
