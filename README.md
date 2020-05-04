@@ -96,7 +96,7 @@ We make our sentiment prediction using a concatenation of the last hidden state 
 The image below shows a bi-directional RNN, with the forward RNN in orange, the backward RNN in green and the linear layer in silver.
 <p align = "center">
    <img src="https://github.com/nikhilshenoy/sentiment_analysis_pytorch/blob/master/images/BiLSTM.png" 
-       width="300" height = "300"/>
+       />
 </p>
 </p>
 
@@ -105,12 +105,12 @@ Compared to LSTMs, this model has fewer parameters. This model finds out the ave
 
 <p align = "center">
    <img src="https://github.com/nikhilshenoy/sentiment_analysis_pytorch/blob/master/images/FastText%200.png" 
-       width="300" height = "300"/>
+      />
 </p>
 
 ### References :
 
-1. References : https://github.com/bentrevett/pytorch-sentiment-analysis
+1. An excellent repository by <a href = "https://github.com/bentrevett"> Ben Trevett </a> : https://github.com/bentrevett/pytorch-sentiment-analysis
 
 
 
